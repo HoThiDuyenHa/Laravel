@@ -1,0 +1,8 @@
+body{
+    background-color: black;
+}
+.name{
+    color:red;
+    text-align: center;
+    font-weight: bold;
+}
