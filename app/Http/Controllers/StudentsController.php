@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StudentsReques;
+use Illuminate\Support\Facades\Session;
 class StudentsController extends Controller
 {
 
@@ -12,19 +13,34 @@ class StudentsController extends Controller
         return view('students');
 
     }
-
+    // Hàm nhận request từ form
     public function displayInfor(StudentsReques $studentsRequest)
     {
-        $students=[
-                'name'=>$name=$studentsRequest->input("name"),
-                'age'=>$age=$studentsRequest->input('age'),
-                'date'=>$date=$studentsRequest->input('date'),
-                'phone'=>$phone=$studentsRequest->input('phone'),
-                'web'=>$web=$studentsRequest->input('web'),
-                'address'=>$address=$studentsRequest->input('address')
+        // Lấy session hiện tại hoặc mảng rỗng nếu không có
+        $users = session('usersession', [ ]);
+    
+        // Thêm student mới vào mảng
+        $students = [
+            'name' => $studentsRequest->input('name'),
+            'age' => $studentsRequest->input('age'),
+            'date' => $studentsRequest->input('date'),
+            'phone' => $studentsRequest->input('phone'),
+            'web' => $studentsRequest->input('web'),
+            'address' => $studentsRequest->input('address')
         ];
-        return view('students')->with('students',$students);
+    
+        $users[ ] = $students; // Thêm vào mảng
+    
+        // Lưu mảng vào session
+        session(['usersession' => $users]);
+    
+        // Trả về view với dữ liệu session
+        return view('students')->with('users', $users);
+    }
+   
+    public function clear() {
+        Session::forget('usersession');
+        return redirect('/');
     }
 
-    
 }

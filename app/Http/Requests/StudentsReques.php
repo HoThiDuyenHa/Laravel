@@ -21,6 +21,7 @@ class StudentsReques extends FormRequest
      */
     public function rules(): array
     {
+        //  quy tắc kiểm tra dữ liệu
         return [
             'name' => 'required|max:255|string',
             'age' => 'numeric',
@@ -32,6 +33,7 @@ class StudentsReques extends FormRequest
     }
     
     public function messages() {
+        // Tùy chỉnh thông báo lỗi khi dữ liệu không hợp lệ.
         return [
             'name.string' => 'Please enter the correct name',
             'name.max' => 'The name cannot exceed 255 characters',

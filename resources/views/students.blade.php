@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="././assets/css/students.css">
 </head>
 <body>
-     <form method="post" action="">
+        <form method="post" action="">
             @csrf
             <div class="form">
                 <h1>Sigup Information</h1>
@@ -43,14 +43,18 @@
               </div>
 
               <div class="display-infor">
-                    @if (isset($students))
-                            <p>Name: {{$students['name'] }}</p>
-                            <p>Address: {{ $students['address']}}</p>
-                            <p>Phone Number: {{ $students['phone'] }}</p>
-                            <p>Age: {{ $students['age']}}</p>
-                            <p>Website: {{ $students['web']}}</p>
-                            <p>Date: {{ $students['date'] }}</p>
-                    @endif
+                <!-- Đổ dữ liệu ra view  -->
+                @if (isset($users))
+                    @foreach ($users as $students)
+                        <p>Name: {{ $students['name'] }}</p>
+                        <p>Address: {{ $students['address'] }}</p>
+                        <p>Phone Number: {{ $students['phone'] }}</p>
+                        <p>Age: {{ $students['age'] }}</p>
+                        <p>Website: {{ $students['web'] }}</p>
+                        <p>Date: {{ $students['date'] }}</p>
+                    @endforeach
+                @endif
+
               </div>
                
 

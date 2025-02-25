@@ -5,7 +5,13 @@ use App\Http\Controllers\MyController;
 use App\Http\Controllers\SumController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentsController;
+
+use App\Http\Controllers\ApiController;
 use Symfony\Component\Routing\RouterInterface;
+
+// VIEW PRODUCTS 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Products2Controller;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -46,3 +52,14 @@ Route::get('/students',[StudentsController::class,'index']);
 
 
 Route::post('/students',[StudentsController::class,'displayInfor']);
+
+Route::get('/exciseAPI',[ApiController::class,'getData']);
+
+Route::get('/data',function(){
+    return view('formRoom');
+});
+
+
+Route::resource('products', ProductController::class);
+
+Route::get('/exciseAPI2',[Products2Controller::class,'index']);
