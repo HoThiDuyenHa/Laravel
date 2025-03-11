@@ -94,3 +94,6 @@ Route::get('database', function () {
 
 use App\Http\Controllers\CreatetableController;
 Route::get('/createtable',[CreatetableController::class,'table']);
+
+use App\Http\Controllers\PageeController;
+Route::get('Pagee',[PageeController::class,'getIndex']);
