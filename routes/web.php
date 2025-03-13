@@ -97,3 +97,9 @@ Route::get('/createtable',[CreatetableController::class,'table']);
 
 use App\Http\Controllers\PageeController;
 Route::get('Pagee',[PageeController::class,'getIndex']);
+
+Route::get('/type/{id}', [PageeController::class, 'getLoaiSp']);
+Route::get('/type/{id}', [PageeController::class, 'getLoaiSp']);
+
+Route::get('/contract',[PageeController::class,'getContract']);
+Route::get('/about',[PageeController::class,'getAbout']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 // use App\Models\News;
+use App\Models\TypeProduct;
 use Illuminate\Http\Request;
 use App\Models\Slide;
 use App\Models\Product;
@@ -24,6 +25,12 @@ class PageeController extends Controller
             return view('page.trangchu', compact('slide', 'new_product', 'promotion_product'));
 
     }
-    
-    
+    public function getLoaiSp($type)
+	{
+	$sp_theoloai = Product::where('id_type', $type)->get();
+	$type_product =TypeProduct::all();
+	$sp_khac = Product::where('id_type', '<>', $type)->paginate(4);
+	
+	return view('page.loai_sanpham', compact('sp_theoloai', 'type_product', 'sp_khac'));
+	}
 }

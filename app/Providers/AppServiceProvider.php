@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Providers;
-
+use App\Models\TypeProduct;
 use Illuminate\Support\ServiceProvider;
-
+use App\Models\Product;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer('header', function ($view) {	
+            $loai_sp = TypeProduct::all();	
+            $view->with('loai_sp', $loai_sp);	
+            });	
+            view()->composer('header',function($view){
+                $product_new=Product::where('new',1)->orderBy('id','DESC')->skip(1)->take(8)->get();
+                $view->with('product_new',$product_new);
+            });
     }
 }
