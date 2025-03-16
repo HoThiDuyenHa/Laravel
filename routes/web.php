@@ -103,3 +103,20 @@ Route::get('/type/{id}', [PageeController::class, 'getLoaiSp']);
 
 Route::get('/contract',[PageeController::class,'getContract']);
 Route::get('/about',[PageeController::class,'getAbout']);
+
+Route::get('/detail/{id}',[PageeController::class,'getDetail']);
+Route::get('/admin', [PageeController::class, 'getIndexAdmin']);
+Route::get('/admin-add-form', [PageeController::class, 'getAdminAdd'])->name('add-product');															
+Route::post('/admin-add-form', [PageeController::class, 'postAdmin']);											
+Route::get('/admin-edit-form/{id}', [PageeController::class, 'getAdminEdit']);												
+Route::post('admin-edit', [PageeController::class, 'postAdminEdit'])->name('admin.edit');
+Route::post('/admin-delete/{id}', [PageeController::class, 'postAdminDelete']);
+
+Route::get('/about', function(){
+    return view('page.about');
+});	
+Route::get('/contact', function(){
+    return view('page.lienhe');
+});	
+
+

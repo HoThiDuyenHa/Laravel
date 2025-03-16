@@ -51,7 +51,7 @@
 									<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header"> 
-											<a href="detail/{{$new->id}}"><img width="200" height="200"
+											<a href="detail/{{$new->id}}"><img width="250" height="250"
 											src="/source/image/product/{{$new->image}}" alt=""></a>
 											</div>
 											@if($new->promotion_price==!0)
@@ -60,7 +60,7 @@
 											</div>
 											@endif
 											<div class="single-item-body">					
-											<p class="single-item-title">{{$new->name}}</p>					
+											<p class="single-item-title"><a href="/detail/{{$new->id}}">{{$new->name}}</a></p>					
 											<p class="single-item-price" style="text-align:left;font-size: 15px;">	
 											@if($new->promotion_price==0)					
 																
@@ -75,6 +75,7 @@
 										
 															
 											<a class="add-to-wishlist" href="wishlist/add/{{$new->id}}"><i class="fa fa-heart"></i></a>			
+											<a class="add-to-cart"><i class="fa fa-shopping-cart"></i></a>			
 											<a class="beta-btn primary" href="detail/{{$new->id}}">Details <i		
 								class="fa fa-chevron-right"></i></a>		
 								<div class="clearfix"></div>		
@@ -99,10 +100,10 @@
 					<div class="col-sm-3">	
 					<div class="single-item">	
 					<div class="single-item-header">	
-					<a href=""><img width="200" height="200" src="/source/image/product/{{$km->image}}" alt=""></a>	
+					<a href="detail/{{$km->id}}"><img width="250" height="250" src="/source/image/product/{{$km->image}}" alt=""></a>	
 					</div>	
 					<div class="single-item-body">	
-					<p class="single-item-title">{{$km->name}}</p>	
+					<p class="single-item-title"><a href="/detail/{{$km->id}}">{{$km->name}}</a></p>	
 					<p class="single-item-price" style="text-align:left;font-size: 15px;">	
 					@if($km->promotion_price==0)	
 					<span class="flash-sale">{{number_format($km->unit_price)}} Đồng</span>	
@@ -116,6 +117,7 @@
 					
 						
 					<a class="add-to-wishlist" href="wishlist/add/{{$new->id}}"><i class="fa fa-heart"></i></a>	
+					<a class="add-to-cart"><i class="fa fa-shopping-cart"></i></a>	
 					<a class="beta-btn primary" href="detail/{{$km->id}}">Details <i	
 					class="fa fa-chevron-right"></i></a>	
 					<div class="clearfix"></div>	

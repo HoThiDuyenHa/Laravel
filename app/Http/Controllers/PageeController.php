@@ -7,6 +7,8 @@ use App\Models\TypeProduct;
 use Illuminate\Http\Request;
 use App\Models\Slide;
 use App\Models\Product;
+use App\Models\Comment;
+use App\Models\BillDetail;
 // use App\Models\News;
 class PageeController extends Controller
 {
@@ -33,4 +35,99 @@ class PageeController extends Controller
 	
 	return view('page.loai_sanpham', compact('sp_theoloai', 'type_product', 'sp_khac'));
 	}
+
+    public function getDetail(Request $request){
+        $sanpham=Product::where('id',$request->id)->first();
+         // Lấy sản phẩm liên quan cùng id_type (trừ sản phẩm hiện tại)
+    $splienquan = Product::where('id_type', $sanpham->id_type)
+                            ->where('id', '!=', $sanpham->id)
+                            ->paginate(3);
+        $count_same_type = Product::where('id_type', $sanpham->id_type)->count();
+        $comments=Comment::where('id_product',$request->id)->get();
+        $bestseller = Product::where('best_seller', 1)->take(4)->get();
+        $new = Product::where('new', 0)->take(4)->get();
+        return view('page.chitiet_sanpham',compact('sanpham','splienquan','comments','bestseller','new','count_same_type'));
+    }
+
+    public function getIndexAdmin(){
+        $products=Product::all();
+        return view('pageadmin.admin')->with([
+            'products' => $products,
+            'sumSold' => BillDetail::count()
+        ]);
+            }
+
+        public function getAdminAdd(){							
+            return view('pageadmin.formAdd');
+								
+
+}
+public function postAdmin(Request $request) {
+     $product = new Product();
+
+    // Xử lý ảnh nếu có
+    if ($request->hasFile('inputImage')) {
+        $file = $request->file('inputImage'); // Lấy đúng input file
+        $fileName = time() . '_' . $file->getClientOriginalName(); // Đặt tên file duy nhất
+        $request->file('inputImage')->move(public_path('source/image/product/'), $fileName); // Lưu ảnh vào thư mục public
+        $product->image =$fileName; // Lưu đường dẫn vào database
+    } 
+
+    // Gán dữ liệu từ request vào sản phẩm
+    $product->name = $request->input('inputName');
+    $product->description = $request->input('inputDescription');
+    $product->unit_price = $request->input('inputPrice');
+    $product->promotion_price = $request->input('inputPromotionPrice', 0);
+    $product->unit = $request->input('inputUnit');
+    $product->new = $request->input('inputNew', 0);
+    $product->best_seller = $request->input('bestSeller', 0);
+    $product->id_type = $request->input('inputType');
+
+    // Lưu vào database
+    $product->save();
+
+    // Quay về trang danh sách sản phẩm với thông báo thành công
+    return $this->getIndexAdmin();
+}
+
+public function getAdminEdit($id)  {			
+    $product = Product::find($id);
+    return view('pageadmin.formEdit')->with('product', $product);
+}
+
+
+        public function postAdminEdit(Request $request) {
+            $id=  $request->editId;
+            $product = Product::find($id);
+            // Xử lý ảnh nếu có
+            if ($request->hasFile('editImage')) { 
+                $file = $request->file('editImage');
+                $fileName = time() . '_' . $file->getClientOriginalName(); // Đặt tên duy nhất
+                $file->move(public_path('source/image/product/'), $fileName);
+                $product->image =$fileName; 
+            }
+            
+        
+            // Gán dữ liệu từ request vào sản phẩm
+            $product->name = $request->input('editName');
+            $product->description = $request->input('editDescription');
+            $product->unit_price = $request->input('editPrice');
+            $product->promotion_price = $request->input('editPromotionPrice', 0);
+            $product->unit = $request->input('editUnit');
+            $product->new = $request->input('editNew', 0);
+            $product->best_seller = $request->input('bestSeller', 0);
+            $product->id_type = $request->input('editType');
+        
+            // Lưu vào database
+            $product->save();
+        
+            // Quay về trang danh sách sản phẩm với thông báo thành công
+            return $this->getIndexAdmin();
+        }
+        
+        public function postAdminDelete($id){
+            $product=Product::find($id);
+            $product->delete();
+            return $this->getIndexAdmin();
+        } 
 }
