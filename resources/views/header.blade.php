@@ -29,16 +29,18 @@
 	<div class="pull-right beta-components space-left ov">				
 	<div class="space10">&nbsp;</div>				
 	<div class="beta-comp">				
-	<form role="search" method="get" id="searchform" action="/">				
-	<input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />				
-	<button class="fa fa-search" type="submit" id="searchsubmit"></button>				
-	</form>				
+	<form role="search" method="GET" id="searchform" action="/search" class="d-flex">
+			<input type="text" name="query" id="s" class="form-control me-2" placeholder="Nhập từ khóa tìm kiếm..." required>
+			<button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+</form>
+
 	</div>				
 	<!-- CART -->				
 	<div class="beta-comp">				
 	@if(Session::has('cart'))				
 	<div class="cart">				
-	<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng				
+	<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng	
+	<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>			
 	(@if(Session::has('cart')){{Session('cart')->totalQty}}@else Trong @endif) <i				
 	class="fa fa-chevron-down"></i></div>				
 	<div class="beta-dropdown cart-body">				

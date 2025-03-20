@@ -130,4 +130,12 @@ public function getAdminEdit($id)  {
             $product->delete();
             return $this->getIndexAdmin();
         } 
-}
+        public function postSearch(Request $request) {
+            $keyword = $request->input('query'); // Lấy giá trị input từ request
+        
+            $products = Product::where('name', 'LIKE', "%$keyword%")->paginate(3);
+        
+            return view('page.search', compact('products'));
+        }
+        
+    }        

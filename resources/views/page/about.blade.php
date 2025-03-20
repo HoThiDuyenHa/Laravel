@@ -34,7 +34,8 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                           
+                                <img src=" https://thietkethicong.org/images/Product/thiet-ke-cua-hang-banh-ngot-1.jpg" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Birth.</h5>
@@ -51,7 +52,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                                <img src="https://mms.img.susercontent.com/vn-11134513-7r98o-lsvcgwuqybica7@resize_ss1242x600!@crop_w1242_h600_cT" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Web Design</h5>
@@ -68,7 +69,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                                <img src="https://i.pinimg.com/564x/1b/66/ce/1b66ceeaebecf6b905154e60201052fd.jpg" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Web Development</h5>
@@ -85,7 +86,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                                <img src="https://daylambanh.edu.vn/wp-content/uploads/2019/06/mo-hinh-ca-phe-banh-ngot-phat-trien-manh.jpg" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Photoshop</h5>
@@ -102,7 +103,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                                <img src="https://cdn.hpdecor.vn/wp-content/uploads/2022/05/thiet-ke-cua-hang-banh-ngot-4.jpg" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Skill</h5>
@@ -119,7 +120,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                                <img src="https://danviet.ex-cdn.com/files/f1/296231569849192448/2022/6/18/2877010675487403402490584510106809032400313n-16555665255791714336348.jpg" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Project.</h5>
@@ -136,7 +137,7 @@
                     <div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="assets/dest/images/history.jpg" alt="">
+                                <img src="https://toplisthanoi.com/wp-content/uploads/2019/10/quan-cafe-banh-ha-noi-2.1.jpg" alt="">
                             </div>
                             <div class="col-sm-7">
                                 <h5 class="other-title">Coffe</h5>
@@ -209,7 +210,7 @@
             <div class="col-sm-6 wow fadeInLeft">
                 <div class="beta-person media">
 
-                    <img class="pull-left" src="assets/dest/images/person2.jpg" alt="">
+                    <img class="pull-left" src="https://magazine.coffee/files/1/images/Screen%20Shot%202018-02-01%20at%208.23.50%20AM.png" width="160px" height="140px"alt="">
 
                     <div class="media-body beta-person-body">
                         <h5>Bob Robertson</h5>
@@ -222,7 +223,7 @@
             <div class="col-sm-6 wow fadeInRight">
                 <div class="beta-person media ">
 
-                    <img class="pull-left" src="assets/dest/images/person3.jpg" alt="">
+                    <img class="pull-left" src="https://vcdn1-kinhdoanh.vnecdn.net/2018/01/16/ORG-DSC09057-4508-1516104135.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=3fLTH6OeE7r4XRxtZkpKfA"  width="160px" height="140px"alt="">
 
                     <div class="media-body beta-person-body">
                         <h5>Mike Greenwood</h5>
@@ -242,7 +243,8 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                     <div class="bets-img-hover">
-                        <img src="assets/dest/images/person1.jpg" alt="">
+                    <img class="pull-left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvpoFoFdIymBAyesKvGThnnKWilKD0OkltL8d7qHsIAhqBF91aBjApXMTT1XOnE3jj2os&usqp=CAU"  width="160px" height="140px"alt="">
+
                     </div>
                     <div class="beta-person-body">
                         <h5>Mark Priston</h5>
@@ -255,7 +257,8 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                     <div class="bets-img-hover">
-                        <img src="assets/dest/images/person2.jpg" alt="">
+                    <img class="pull-left" src="https://magazine.coffee/files/1/images/Screen%20Shot%202018-02-01%20at%208.23.50%20AM.png" width="160px" height="140px"alt="">
+
                     </div>
                     <div class="beta-person-body">
                         <h5>Bob Robertson</h5>
@@ -268,7 +271,8 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                     <div class="bets-img-hover">
-                        <img src="assets/dest/images/person3.jpg" alt="">
+                    <img class="pull-left" src="https://vcdn1-kinhdoanh.vnecdn.net/2018/01/16/ORG-DSC09057-4508-1516104135.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=3fLTH6OeE7r4XRxtZkpKfA"  width="160px" height="140px"alt="">
+
                     </div>
                     <div class="beta-person-body">
                         <h5>Mike Greenwood</h5>
@@ -281,7 +285,8 @@
             <div class="col-sm-3">
                 <div class="beta-person beta-person-full">
                     <div class="bets-img-hover">
-                        <img src="assets/dest/images/person4.jpg" alt="">
+                    <img class="pull-left" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg2Q-k2d6z5mhnFtY7GaqetUlm2tva6cPlhA&s"  width="160px" height="140px"alt="">
+
                     </div>
                     <div class="beta-person-body">
                         <h5>David Black</h5>

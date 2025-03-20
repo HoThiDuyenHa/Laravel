@@ -104,7 +104,7 @@ Route::get('/type/{id}', [PageeController::class, 'getLoaiSp']);
 Route::get('/contract',[PageeController::class,'getContract']);
 Route::get('/about',[PageeController::class,'getAbout']);
 
-Route::get('/detail/{id}',[PageeController::class,'getDetail']);
+Route::get('/detail/{id}', [PageeController::class, 'getDetail'])->name('detail');
 Route::get('/admin', [PageeController::class, 'getIndexAdmin']);
 Route::get('/admin-add-form', [PageeController::class, 'getAdminAdd'])->name('add-product');															
 Route::post('/admin-add-form', [PageeController::class, 'postAdmin']);											
@@ -119,4 +119,5 @@ Route::get('/contact', function(){
     return view('page.lienhe');
 });	
 
-
+// Tìm kiếm
+Route::get('/search', [PageeController::class, 'postSearch'])->name('search');
